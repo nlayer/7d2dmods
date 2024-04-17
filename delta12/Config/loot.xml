@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<delta12>
+
+	<!-- more books in loot so we can progress faster -->
+	<set xpath="//lootgroup[starts-with(@name, 'group')]/item[@group='booksAllScaled']/@loot_prob_template">high</set>
+	<set xpath="//lootgroup[starts-with(@name, 'group')]/item[@group='skillMagazines']/@loot_prob_template">high</set>
+	<set xpath="//lootgroup[starts-with(@name, 'groupJunk')]/item[@group='booksAllScaled']/@loot_prob_template">med</set>
+	<set xpath="//lootgroup[starts-with(@name, 'groupJunk')]/item[@group='skillMagazines']/@loot_prob_template">med</set>
+
+	<!-- nests and trash stay after looting, because the poof is just weird -->
+	<removeattribute xpath="/lootcontainers/lootcontainer[@name='birdNest' or @name='junk']/@destroy_on_close" />
+	
+	<!-- craftable water filter -->
+	<append xpath="/lootcontainers/lootgroup[@name='schematicsModsAndGeneralT0']">
+		<item name="resourceWaterFilterSchematic" />
+	</append>
+	
+	<!-- more water -->
+		<!-- UNCOMMON DRINK GROUP -->
+			<append xpath="/lootcontainers/lootgroup[@name='groupDrinksUncommon']">
+				<item name="drinkJarBoiledWater"/>
+			</append>
+
+		<!-- WATER COOLERS -->
+			<remove xpath="/lootcontainers/lootcontainer[@name='waterCooler']/item[@name='drinkJarRiverWater']" />
+			<append xpath="/lootcontainers/lootcontainer[@name='waterCooler']"> 
+				<item name="drinkJarBoiledWater" count="1,2" />
+			</append>
+
+		<!-- SMALL LIQUOR PILE -->
+			<append xpath="/lootcontainers/lootgroup[@name='groupLiquorSmall01']">
+				<item name="drinkJarBoiledWater" count="1" loot_prob_template="veryLow" />
+			</append>
+
+		<!-- MEDIUM LIQUOR PILE -->
+			<append xpath="/lootcontainers/lootgroup[@name='groupLiquorMed01']">
+				<item name="drinkJarBoiledWater" count="1" loot_prob_template="low" />
+			</append>
+
+		<!-- LARGE LIQUOR PILE -->
+			<append xpath="/lootcontainers/lootgroup[@name='groupLiquorLarge01']">
+				<item name="drinkJarBoiledWater" count="1" loot_prob_template="low" />
+			</append>
+
+		<!-- LIQUOR BONUS -->
+			<append xpath="/lootcontainers/lootgroup[@name='groupLiquorBonus']">
+				<item name="drinkJarBoiledWater" count="1" loot_prob_template="low" />
+			</append>
+	
+	<!-- major bump in airdrop loot -->
+		<remove xpath="/lootcontainers/lootcontainer[@name='airDrop']"></remove>
+		<insertAfter xpath="/lootcontainers/lootgroup[@name='groupAirDrop']">
+			<lootgroup name="D12Airdrop1" count="8">
+					<item name="casinoCoin" count="100,2999"/>
+					<item name="vehicleMotorcycleHandlebars" count="1" prob="0.03" />
+					<item name="vehicleMinibikeHandlebars" count="1" prob="0.04" />
+					<item name="vehicleBicycleChassis" count="1" prob="0.05" />
+					<item name="smallEngine" count="1" prob="0.05" />
+					<item name="ammoGasCan" count="10,999" prob="0.05" />
+					<item name="vehicleBicycleHandlebars" count="1" prob="0.04" />
+					<item name="vehicleWheels" count="1" prob="0.05" />
+					<item name="vehicleGyroCopterChassis" count="1" prob="0.01" />
+					<item name="vehicleMinibikeChassis" count="1" prob="0.04" />
+					<item name="vehicle4x4TruckChassis" count="1" prob="0.02" />
+					<item name="vehicleMotorcycleChassis" count="1" prob="0.03" />
+					<item name="vehicleGyroCopterAccessories" count="1" prob="0.01" />
+					<item name="carBattery" count="1" prob="0.05" />
+					<item name="vehicle4x4TruckAccessories" count="1" prob="0.02" />
+					<item name="resourceGunPowder" count="10,999" prob="0.05" />
+					<item name="resourceSewingKit" count="4,10" prob="0.05" />
+					<item name="resourceGlue" count="6,10" prob="0.05" />
+					<item name="resourceNail" count="6,100" prob="0.05" />
+					<item name="resourceScrapBrass" count="6,666" prob="0.05" />
+					<item name="resourceScrapPolymers" count="6,60" prob="0.05" />
+					<item name="resourceLockPick" count="6,10" prob="0.05" />
+					<item name="resourceFeather" count="6,60" prob="0.05" />
+					<item name="resourceBulletCasing" count="6,10" prob="0.05" />
+					<item name="resourceDuctTape" count="6,10" prob="0.05" />
+					<item name="resourceScrapIronBundle" count="1" prob="0.02" />
+					<item name="resourceRockSmallBundle" count="1" prob="0.02" />
+					<item name="resourceWoodBundle" count="1" prob="0.02" />
+					<item name="resourcePotassiumNitratePowderBundle" count="1" prob="0.02" />
+					<item name="resourceLeadBundle" count="1" prob="0.02" />
+					<item name="resourceCoalBundle" count="1" prob="0.02" />
+					<item name="resourceOilShaleBundle" count="1" prob="0.02" />
+					<item name="resourceGunPowderBundle" count="1" prob="0.02" />
+					<item name="harvestingToolsSkillMagazine" count="1,2" prob="0.05" />
+					<item name="repairToolsSkillMagazine" count="1,2" prob="0.05" />
+					<item name="salvageToolsSkillMagazine" count="1,2" prob="0.05" />
+					<item name="knucklesSkillMagazine" count="1,2" prob="0.05" />
+					<item name="bladesSkillMagazine" count="1,2" prob="0.05" />
+					<item name="clubsSkillMagazine" count="1,2" prob="0.05" />
+					<item name="sledgehammersSkillMagazine" count="1,2" prob="0.05" />
+					<item name="spearsSkillMagazine" count="1,2" prob="0.05" />
+					<item name="bowsSkillMagazine" count="1,2" prob="0.05" />
+					<item name="handgunsSkillMagazine" count="1,2" prob="0.05" />
+					<item name="shotgunsSkillMagazine" count="1,2" prob="0.05" />
+					<item name="riflesSkillMagazine" count="1,2" prob="0.05" />
+					<item name="machineGunsSkillMagazine" count="1,2" prob="0.05" />
+					<item name="explosivesSkillMagazine" count="1,2" prob="0.05" />
+					<item name="roboticsSkillMagazine" count="1,2" prob="0.05" />
+					<item name="armorSkillMagazine" count="1,2" prob="0.05" />
+					<item name="medicalSkillMagazine" count="1,2" prob="0.05" />
+					<item name="foodSkillMagazine" count="1,2" prob="0.05" />
+					<item name="seedSkillMagazine" count="1,2" prob="0.05" />
+					<item name="electricianSkillMagazine" count="1,2" prob="0.05" />
+					<item name="trapsSkillMagazine" count="1,2" prob="0.05" />
+					<item name="workstationSkillMagazine" count="1,2" prob="0.05" />
+					<item name="vehiclesSkillMagazine" count="1,2" prob="0.05" />
+					<item name="modArmorHelmetLightSchematic" count="1" prob="0.05" />
+					<item name="modArmorBandolierSchematic" count="1" prob="0.05" />
+					<item name="modArmorInsulatedLinerSchematic" count="1" prob="0.05" />
+					<item name="modArmorPlatingBasicSchematic" count="1" prob="0.05" />
+					<item name="modArmorCoolingMeshSchematic" count="1" prob="0.05" />
+					<item name="modGunFlashlightSchematic" count="1" prob="0.05" />
+					<item name="modArmorImprovedFittingsSchematic" count="1" prob="0.05" />
+					<item name="modGunBarrelExtenderSchematic" count="1" prob="0.05" />
+					<item name="modArmorStoragePocketSchematic" count="1" prob="0.05" />
+					<item name="modGunScopeSmallSchematic" count="1" prob="0.05" />
+					<item name="modArmorDoubleStoragePocketSchematic" count="1" prob="0.05" />
+					<item name="modArmorMuffledConnectorsSchematic" count="1" prob="0.05" />
+					<item name="modGunMuzzleBrakeSchematic" count="1" prob="0.05" />
+					<item name="modGunBipodSchematic" count="1" prob="0.05" />
+					<item name="modGunScopeMediumSchematic" count="1" prob="0.05" />
+					<item name="modGunChokeSchematic" count="1" prob="0.05" />
+					<item name="modShotgunSawedOffBarrelSchematic" count="1" prob="0.05" />
+					<item name="modGunReflexSightSchematic" count="1" prob="0.05" />
+					<item name="modGunBowArrowRestSchematic" count="1" prob="0.05" />
+					<item name="modGunTriggerGroupSemiSchematic" count="1" prob="0.05" />
+					<item name="modGunForegripSchematic" count="1" prob="0.05" />
+					<item name="modGunRetractingStockSchematic" count="1" prob="0.05" />
+					<item name="modGunDuckbillSchematic" count="1" prob="0.05" />
+					<item name="modGunMagazineExtenderSchematic" count="1" prob="0.05" />
+					<item name="modGunCrippleEmSchematic" count="1" prob="0.05" />
+					<item name="modMeleeGraveDiggerSchematic" count="1" prob="0.05" />
+					<item name="modGunBowPolymerStringSchematic" count="1" prob="0.05" />
+					<item name="modMeleeTemperedBladeSchematic" count="1" prob="0.05" />
+					<item name="modMeleeWeightedHeadSchematic" count="1" prob="0.05" />
+					<item name="modMeleeSerratedBladeSchematic" count="1" prob="0.05" />
+					<item name="modMeleeWoodSplitterSchematic" count="1" prob="0.05" />
+					<item name="modMeleeStructuralBraceSchematic" count="1" prob="0.05" />
+					<item name="modMeleeErgonomicGripSchematic" count="1" prob="0.05" />
+					<item name="modGunTriggerGroupBurst3Schematic" count="1" prob="0.05" />
+					<item name="modMeleeFortifyingGripSchematic" count="1" prob="0.05" />
+					<item name="modFuelTankSmallSchematic" count="1" prob="0.05" />
+					<item name="modMeleeClubBarbedWireSchematic" count="1" prob="0.05" />
+					<item name="modMeleeClubMetalSpikesSchematic" count="1" prob="0.05" />
+					<item name="modMeleeClubBurningShaftSchematic" count="1" prob="0.05" />
+					<item name="modMeleeIronBreakerSchematic" count="1" prob="0.05" />
+					<item name="modFuelTankLargeSchematic" count="1" prob="0.05" />
+					<item name="modArmorImpactBracingSchematic" count="1" prob="0.05" />
+					<item name="modGunScopeLargeSchematic" count="1" prob="0.05" />
+					<item name="modGunLaserSightSchematic" count="1" prob="0.05" />
+					<item name="modArmorAdvancedMuffledConnectorsSchematic" count="1" prob="0.05" />
+					<item name="modGunSoundSuppressorSilencerSchematic" count="1" prob="0.05" />
+					<item name="modMeleeBunkerBusterSchematic" count="1" prob="0.05" />
+					<item name="modGunTriggerGroupAutomaticSchematic" count="1" prob="0.05" />
+					<item name="modArmorWaterPurifierSchematic" count="1" prob="0.05" />
+					<item name="modGunMeleeRadRemoverSchematic" count="1" prob="0.05" />
+					<item name="modArmorPlatingReinforcedSchematic" count="1" prob="0.05" />
+					<item name="modArmorTripleStoragePocketSchematic" count="1" prob="0.05" />
+					<item name="modArmorCustomizedFittingsSchematic" count="1" prob="0.05" />
+					<item name="foodCanStock" count="2,5" prob="0.10" />
+					<item name="foodCornMeal" count="10,15" prob="0.05" />
+					<item name="foodCanBeef" count="2,5" prob="0.10" />
+					<item name="foodCanCatfood" count="2,5" prob="0.10" />
+					<item name="foodCanChicken" count="2,5" prob="0.10" />
+					<item name="foodHoney" count="1,5" prob="0.05" />
+					<item name="foodCanChili" count="2,5" prob="0.10" />
+					<item name="foodCanDogfood" count="2,5" prob="0.10" />
+					<item name="foodCanSham" count="3,5" prob="0.10" />
+					<item name="foodCanPears" count="1,5" prob="0.05" />
+					<item name="foodCanLamb" count="2,5" prob="0.05" />
+					<item name="foodCanTuna" count="2,5" prob="0.05" />
+					<item name="foodCanMiso" count="2,5" prob="0.05" />
+					<item name="foodCanPasta" count="2,5" prob="0.05" />
+					<item name="foodCanPeas" count="1,5" prob="0.05" />
+					<item name="foodCanSalmon" count="1,5" prob="0.05" />
+					<item name="foodCanSoup" count="1,5" prob="0.05" />
+					<item name="drugSugarButts" count="2,5" prob="0.05" />
+					<item name="bookRangersArrowRecovery" count="1" prob="0.05" />
+					<item name="bookRangersCripplingShot" count="1" prob="0.05" />
+					<item name="bookRangersKnockdown" count="1" prob="0.05" />
+					<item name="bookRangersFlamingArrows" count="1" prob="0.05" />
+					<item name="bookRangersAPAmmo" count="1" prob="0.05" />
+					<item name="bookRangersExplodingBolts" count="1" prob="0.05" />
+					<item name="bookRangersForestGuide" count="1" prob="0.05" />
+					<item name="bookArtOfMiningLuckyStrike" count="1" prob="0.05" />
+					<item name="bookArtOfMiningDiamondTools" count="1" prob="0.05" />
+					<item name="bookArtOfMiningCoffee" count="1" prob="0.05" />
+					<item name="bookArtOfMiningBlackStrap" count="1" prob="0.05" />
+					<item name="bookArtOfMiningPallets" count="1" prob="0.05" />
+					<item name="bookArtOfMiningAvalanche" count="1" prob="0.05" />
+					<item name="bookArtOfMiningDamage" count="1" prob="0.05" />
+					<item name="bookAutoWeaponsDamage" count="1" prob="0.05" />
+					<item name="bookAutoWeaponsRagdoll" count="1" prob="0.05" />
+					<item name="bookAutoWeaponsMaintenance" count="1" prob="0.05" />
+					<item name="bookAutoWeaponsRecoil" count="1" prob="0.05" />
+					<item name="bookAutoWeaponsDrumMag" count="1" prob="0.05" />
+					<item name="bookAutoWeaponsUncontrolledBurst" count="1" prob="0.05" />
+					<item name="bookAutoWeaponsMachineGuns" count="1" prob="0.05" />
+					<item name="bookBatterUpBigHits" count="1" prob="0.05" />
+					<item name="bookBatterUpStealingBases" count="1" prob="0.05" />
+					<item name="bookBatterUpSlowPitch" count="1" prob="0.05" />
+					<item name="bookBatterUpKnockdown" count="1" prob="0.05" />
+					<item name="bookBatterUpMaintenance" count="1" prob="0.05" />
+					<item name="bookBatterUpFoulBalls" count="1" prob="0.05" />
+					<item name="bookBatterUpMetalChain" count="1" prob="0.05" />
+					<item name="bookEnforcerDamage" count="1" prob="0.05" />
+					<item name="bookEnforcerApparel" count="1" prob="0.05" />
+					<item name="bookEnforcerPunks" count="1" prob="0.05" />
+					<item name="bookEnforcerIntimidation" count="1" prob="0.05" />
+					<item name="bookEnforcerAPAmmo" count="1" prob="0.05" />
+					<item name="bookEnforcerHPAmmo" count="1" prob="0.05" />
+					<item name="bookEnforcerCriminalPursuit" count="1" prob="0.05" />
+					<item name="bookFiremansAlmanacSpeed" count="1" prob="0.05" />
+					<item name="bookFiremansAlmanacAxes" count="1" prob="0.05" />
+					<item name="bookFiremansAlmanacEquipment" count="1" prob="0.05" />
+					<item name="bookFiremansAlmanacPrevention" count="1" prob="0.05" />
+					<item name="bookFiremansAlmanacHarvest" count="1" prob="0.05" />
+					<item name="bookFiremansAlmanacHeat" count="1" prob="0.05" />
+					<item name="bookFiremansAlmanacMolotov" count="1" prob="0.05" />
+					<item name="bookGreatHeistAdrenalineFall" count="1" prob="0.05" />
+					<item name="bookGreatHeistGoldRush" count="1" prob="0.05" />
+					<item name="bookGreatHeistClaimed" count="1" prob="0.05" />
+					<item name="bookGreatHeistGems" count="1" prob="0.05" />
+					<item name="bookGreatHeistMotionDetection" count="1" prob="0.05" />
+					<item name="bookGreatHeistSafes" count="1" prob="0.05" />
+					<item name="bookGreatHeistSprintSneak" count="1" prob="0.05" />
+					<item name="bookHuntingJournalBears" count="1" prob="0.05" />
+					<item name="bookHuntingJournalCoyotes" count="1" prob="0.05" />
+					<item name="bookHuntingJournalDeer" count="1" prob="0.05" />
+					<item name="bookHuntingJournalMountainLions" count="1" prob="0.05" />
+					<item name="bookHuntingJournalVultures" count="1" prob="0.05" />
+					<item name="bookHuntingJournalWolves" count="1" prob="0.05" />
+					<item name="bookHuntingJournalSelfDefense" count="1" prob="0.05" />
+					<item name="bookLuckyLooterAmmunition" count="1" prob="0.05" />
+					<item name="bookLuckyLooterBooks" count="1" prob="0.05" />
+					<item name="bookLuckyLooterBrass" count="1" prob="0.05" />
+					<item name="bookLuckyLooterDukes" count="1" prob="0.05" />
+					<item name="bookLuckyLooterFood" count="1" prob="0.05" />
+					<item name="bookLuckyLooterLead" count="1" prob="0.05" />
+					<item name="bookLuckyLooterMedical" count="1" prob="0.05" />
+					<item name="bookNeedleAndThreadDesertWear" count="1" prob="0.05" />
+					<item name="bookNeedleAndThreadDusters" count="1" prob="0.05" />
+					<item name="bookNeedleAndThreadFootwear" count="1" prob="0.05" />
+					<item name="bookNeedleAndThreadLegwear" count="1" prob="0.05" />
+					<item name="bookNeedleAndThreadPockets" count="1" prob="0.05" />
+					<item name="bookNeedleAndThreadPufferCoats" count="1" prob="0.05" />
+					<item name="bookNeedleAndThreadWinterWear" count="1" prob="0.05" />
+					<item name="bookNightStalkerArchery" count="1" prob="0.05" />
+					<item name="bookNightStalkerBlades" count="1" prob="0.05" />
+					<item name="bookNightStalkerSilentNight" count="1" prob="0.05" />
+					<item name="bookNightStalkerSlumberParty" count="1" prob="0.05" />
+					<item name="bookNightStalkerStealthDamage" count="1" prob="0.05" />
+					<item name="bookNightStalkerThiefAdrenaline" count="1" prob="0.05" />
+					<item name="bookNightStalkerTwilightThief" count="1" prob="0.05" />
+					<item name="bookPistolPeteAPAmmo" count="1" prob="0.05" />
+					<item name="bookPistolPeteDamage" count="1" prob="0.05" />
+					<item name="bookPistolPeteHPAmmo" count="1" prob="0.05" />
+					<item name="bookPistolPeteMaintenance" count="1" prob="0.05" />
+					<item name="bookPistolPeteSteadyHand" count="1" prob="0.05" />
+					<item name="bookPistolPeteSwissKnees" count="1" prob="0.05" />
+					<item name="bookPistolPeteTakeAim" count="1" prob="0.05" />
+					<item name="bookShotgunMessiahBreachingSlugs" count="1" prob="0.05" />
+					<item name="bookShotgunMessiahDamage" count="1" prob="0.05" />
+					<item name="bookShotgunMessiahLimbShot" count="1" prob="0.05" />
+					<item name="bookShotgunMessiahMaintenance" count="1" prob="0.05" />
+					<item name="bookShotgunMessiahMagazine" count="1" prob="0.05" />
+					<item name="bookShotgunMessiahPartyStarter" count="1" prob="0.05" />
+					<item name="bookShotgunMessiahSlugs" count="1" prob="0.05" />
+					<item name="bookSniperAPAmmo" count="1" prob="0.05" />
+					<item name="bookSniperControlledBreathing" count="1" prob="0.05" />
+					<item name="bookSniperCripplingShot" count="1" prob="0.05" />
+					<item name="bookSniperDamage" count="1" prob="0.05" />
+					<item name="bookSniperHeadShot" count="1" prob="0.05" />
+					<item name="bookSniperReload" count="1" prob="0.05" />
+					<item name="bookSniperHPAmmo" count="1" prob="0.05" />
+					<item name="bookUrbanCombatAdrenalineRush" count="1" prob="0.05" />
+					<item name="bookUrbanCombatCigar" count="1" prob="0.05" />
+					<item name="bookUrbanCombatRoomClearing" count="1" prob="0.05" />
+					<item name="bookUrbanCombatJumping" count="1" prob="0.05" />
+					<item name="bookUrbanCombatLandMines" count="1" prob="0.05" />
+					<item name="bookUrbanCombatLanding" count="1" prob="0.05" />
+					<item name="bookUrbanCombatSneaking" count="1" prob="0.05" />
+					<item name="bookWasteTreasuresAcid" count="1" prob="0.05" />
+					<item name="bookWasteTreasuresCloth" count="1" prob="0.05" />
+					<item name="bookWasteTreasuresCoffins" count="1" prob="0.05" />
+					<item name="bookWasteTreasuresDoors" count="1" prob="0.05" />
+					<item name="bookWasteTreasuresHoney" count="1" prob="0.05" />
+					<item name="bookWasteTreasuresSinks" count="1" prob="0.05" />
+					<item name="bookWasteTreasuresWater" count="1" prob="0.05" />
+					<item name="ammoBundle762mmBulletBall" count="1" prob="0.05" />
+					<item name="ammoBundle9mmBulletBall" count="1" prob="0.05" />
+					<item name="ammoBundleShotgunShell" count="1" prob="0.05" />
+					<item name="ammoBundle44MagnumBulletBall" count="1" prob="0.05" />
+					<item name="ammoBundleCrossbowBoltIron" count="1" prob="0.05" />
+					<item name="ammoBundleJunkTurretRegular" count="1" prob="0.05" />
+					<item name="ammoBundleArrowIron" count="1" prob="0.05" />
+					<item name="meleeToolPickT1IronPickaxe" count="1" prob="0.05" />
+					<item name="meleeToolPickT3Auger" count="1" prob="0.01" />
+					<item name="meleeToolSalvageT1Wrench" count="1" prob="0.05" />
+					<item name="meleeToolSalvageT3ImpactDriver" count="1" prob="0.05" />
+					<item name="meleeToolShovelT2SteelShovel" count="1" prob="0.05" />
+					<item name="meleeToolRepairT1ClawHammer" count="1" prob="0.05" />
+					<item name="meleeToolSalvageT2Ratchet" count="1" prob="0.05" />
+					<item name="meleeToolRepairT3Nailgun" count="1" prob="0.05" />
+					<item name="meleeToolPaintTool" count="1" prob="0.05" />
+					<item name="meleeToolSalvageT1Wrench" count="1" prob="0.05" />
+					<item name="meleeToolWireTool" count="1" prob="0.05" />
+					<item name="meleeToolAxeT1IronFireaxe" count="1" prob="0.05" />
+					<item name="meleeToolAxeT3Chainsaw" count="1" prob="0.01" />
+			</lootgroup>
+		</insertAfter>
+		<insertAfter xpath="/lootcontainers/lootcontainer[@name='playerFileCabinet']">
+			<lootcontainer name="airDrop" count="4" size="9,2" destroy_on_close="true" sound_open="SupplyDrops/open_supply_crate" sound_close="SupplyDrops/close_supply_crate" loot_quality_template="qualBaseTemplate">
+				<item group="D12Airdrop1" />
+			</lootcontainer>
+		</insertAfter>
+	
+</delta12>

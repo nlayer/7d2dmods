@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<delta12>
+
+	<!-- increase the skill points per level so we can have fun faster -->
+	<set xpath="/progression/level/@skill_points_per_level">3</set>
+	
+	<!-- craftable water filter --> 
+	<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingFood']/effect_group">
+		<passive_effect name="RecipeTagUnlocked" operation="base_set" level="10,100" value="1" tags="resourceWaterFilter" />
+	</append>
+	
+</delta12>

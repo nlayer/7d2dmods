@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<delta12>
+
+	<!-- even if a little cheaty, traders stay open 24x7 so we are not rushed at sunset -->
+	<removeattribute xpath="/traders/trader_info[@id='1']/@open_time" />
+	<removeattribute xpath="/traders/trader_info[@id='1']/@close_time" />
+
+	<removeattribute xpath="/traders/trader_info[@id='6']/@open_time" />
+	<removeattribute xpath="/traders/trader_info[@id='6']/@close_time" />
+	
+	<removeattribute xpath="/traders/trader_info[@id='2']/@open_time" />
+	<removeattribute xpath="/traders/trader_info[@id='2']/@close_time" />
+	
+	<removeattribute xpath="/traders/trader_info[@id='7']/@open_time" />
+	<removeattribute xpath="/traders/trader_info[@id='7']/@close_time" />
+	
+	<removeattribute xpath="/traders/trader_info[@id='8']/@open_time" />
+	<removeattribute xpath="/traders/trader_info[@id='8']/@close_time" />
+	
+</delta12>

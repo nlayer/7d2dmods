@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<delta12>
+
+	<!-- remove starting quests, grant xp anyway  -->
+		<remove xpath="/quests/quest[@id='quest_BasicSurvival1']/objective" />
+		<remove xpath="/quests/quest[@id='quest_BasicSurvival1']/action" />
+		<remove xpath="/quests/quest[@id='quest_whiteRiverCitizen1']/action" />
+		<set xpath="/quests/quest[@id='quest_BasicSurvival1']/reward[@type='Exp']/@value">350</set>
+		<!-- GIVE REWARDS FROM SKIPPED QUESTS 
+			  1 = BEDROLL
+			  2 = STONE AXE
+			  3 = FIBER PANTS
+			  4 = N/A
+			  5 = WOODEN CLUB
+			  6 = BOW AND ARROWS (1 ARROW POINTLESS, GIVE 10)
+			  7 = CAMPFIRE
+			  8 = 4 SKILL POINTS
+		  -->
+		  <append xpath="/quests/quest[@id='quest_BasicSurvival1']" >
+			<reward type="Item" id="bedroll" />
+			<reward type="Item" id="meleeToolRepairT0StoneAxe" value="1" />
+			<reward type="Item" id="apparelPlantFiberPants" value ="1" />
+			<reward type="Item" id="meleeWpnClubT0WoodenClub" value="1" />
+			<reward type="Item" id="gunBowT0PrimitiveBow" value="1" />
+			<reward type="Item" id="ammoArrowStone" value="10" />
+			<reward type="Item" id="campfire" />
+			<reward type="SkillPoints" value="4" />
+		</append>
+		<!-- SET NEXT QUEST AS TRADER QUEST -->
+		<set xpath="/quests/quest[@id='quest_BasicSurvival1']/reward[@type='Quest']/@id">quest_whiteRiverCitizen1</set>
+
+</delta12>

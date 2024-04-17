@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<delta12>
+
+	<!-- Increases chance for default weather, lowers chances for foul weather, lowers bloodmoon fog -->
+		<!-- Snow Biome -->
+			<set xpath="/worldgeneration/biomes/biome[@name='snow']/weather[@name='default']/@prob">85</set>
+			<set xpath="/worldgeneration/biomes/biome[@name='snow']/weather[@name='fog']/@prob">5</set>
+			<set xpath="/worldgeneration/biomes/biome[@name='snow']/weather[@name='snow']/@prob">5</set>
+			<set xpath="/worldgeneration/biomes/biome[@name='snow']/weather[@name='storm']/@prob">5</set>
+			<set xpath="/worldgeneration/biomes/biome[@name='snow']/weather[@name='bloodMoon']/Fog/@min">3</set>
+			<set xpath="/worldgeneration/biomes/biome[@name='snow']/weather[@name='bloodMoon']/Fog/@max">3</set>
+		<!-- Pine Forest Biome -->
+			<set xpath="/worldgeneration/biomes/biome[@name='pine_forest']/weather[@name='default']/@prob">85</set>
+			<set xpath="/worldgeneration/biomes/biome[@name='pine_forest']/weather[@name='fog']/@prob">5</set>
+			<set xpath="/worldgeneration/biomes/biome[@name='pine_forest']/weather[@name='rain']/@prob">5</set>
+			<set xpath="/worldgeneration/biomes/biome[@name='pine_forest']/weather[@name='storm']/@prob">5</set>
+			<set xpath="/worldgeneration/biomes/biome[@name='pine_forest']/weather[@name='bloodMoon']/Fog/@min">3</set>
+			<set xpath="/worldgeneration/biomes/biome[@name='pine_forest']/weather[@name='bloodMoon']/Fog/@max">3</set>
+		<!-- Desert Biome -->
+			<set xpath="/worldgeneration/biomes/biome[@name='desert']/weather[@name='default']/@prob">98</set>
+			<set xpath="/worldgeneration/biomes/biome[@name='desert']/weather[@name='rain']/@prob">1</set> 
+			<set xpath="/worldgeneration/biomes/biome[@name='desert']/weather[@name='storm']/@prob">1</set>
+			<set xpath="/worldgeneration/biomes/biome[@name='desert']/weather[@name='bloodMoon']/Fog/@min">3</set>
+			<set xpath="/worldgeneration/biomes/biome[@name='desert']/weather[@name='bloodMoon']/Fog/@max">3</set>
+		<!-- Wasteland Biome -->
+			<set xpath="/worldgeneration/biomes/biome[@name='wasteland']/weather[@name='default']/@prob">90</set>
+			<set xpath="/worldgeneration/biomes/biome[@name='wasteland']/weather[@name='rain']/@prob">5</set>
+			<set xpath="/worldgeneration/biomes/biome[@name='wasteland']/weather[@name='storm']/@prob">5</set>
+			<set xpath="/worldgeneration/biomes/biome[@name='wasteland']/weather[@name='bloodMoon']/Fog/@min">3</set>
+			<set xpath="/worldgeneration/biomes/biome[@name='wasteland']/weather[@name='bloodMoon']/Fog/@max">3</set>
+		<!-- Burnt Forest Biome -->
+			<set xpath="/worldgeneration/biomes/biome[@name='burnt_forest']/weather[@name='default']/@prob">90</set>
+			<set xpath="/worldgeneration/biomes/biome[@name='burnt_forest']/weather[@name='rain']/@prob">5</set>
+			<set xpath="/worldgeneration/biomes/biome[@name='burnt_forest']/weather[@name='storm']/@prob">5</set>
+			<set xpath="/worldgeneration/biomes/biome[@name='burnt_forest']/weather[@name='bloodMoon']/Fog/@min">3</set>
+			<set xpath="/worldgeneration/biomes/biome[@name='burnt_forest']/weather[@name='bloodMoon']/Fog/@max">3</set>
+			
+</delta12>

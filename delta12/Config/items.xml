@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<delta12>
+
+	<!-- for any item that can, increase stacksize signficiantly, regardless of realism -->
+		<set xpath="/items/item/property[@name='Stacknumber' and not(@value='1')]/@value">5000</set>
+		<set xpath="/items/item[starts-with(@name, 'tool')]/property[@name='Stacknumber']/@value">5000</set>	
+		<set xpath="/items/item[@name='schematicMaster']/property[@name='Stacknumber']/@value">5000</set>
+		<set xpath="/items/item[@name='medicalBloodDrawKit']/property[@name='Stacknumber']/@value">5000</set>
+		<set xpath="/items/item[@name='smallEngine']/property[@name='Stacknumber']/@value">5000</set>
+		<set xpath="/items/item[@name='questMaster']/property[@name='Stacknumber']/@value">5000</set>
+		<set xpath="/items/item[@name='casinoCoin']/property[@name='Stacknumber']/@value">50000</set>
+		<set xpath="/items/item[@name='candle']/property[@name='Stacknumber']/@value">5000</set>
+		<set xpath="/items/item[@name='oldCash']/property[@name='Stacknumber']/@value">5000</set>
+	
+	<!-- base dmg of bladed weapons (fireaxes, knives, and spears) is increased -->
+		<set xpath="//item[starts-with(@name, 'meleeWpnBladeT0')]/effect_group[starts-with(@name, 'meleeWpnBladeT0')]/passive_effect[@name='EntityDamage' and @operation='base_set']/@value">8</set>
+		<set xpath="//item[starts-with(@name, 'meleeWpnBladeT1')]/effect_group[starts-with(@name, 'meleeWpnBladeT1')]/passive_effect[@name='EntityDamage' and @operation='base_set']/@value">16</set>
+		<set xpath="//item[starts-with(@name, 'meleeWpnBladeT3')]/effect_group[starts-with(@name, 'meleeWpnBladeT3')]/passive_effect[@name='EntityDamage' and @operation='base_set']/@value">32</set>
+		<set xpath="//item[starts-with(@name, 'meleeWpnSpearT0')]/effect_group[starts-with(@name, 'meleeWpnSpearT0')]/passive_effect[@name='EntityDamage' and @operation='base_set']/@value">15</set>
+		<set xpath="//item[starts-with(@name, 'meleeWpnSpearT1')]/effect_group[starts-with(@name, 'meleeWpnSpearT1')]/passive_effect[@name='EntityDamage' and @operation='base_set']/@value">30</set>
+		<set xpath="//item[starts-with(@name, 'meleeWpnSpearT3')]/effect_group[starts-with(@name, 'meleeWpnSpearT3')]/passive_effect[@name='EntityDamage' and @operation='base_set']/@value">40</set>
+		<set xpath="//item[starts-with(@name, 'meleeToolAxeT1')]/effect_group[starts-with(@name, 'meleeToolAxeT1')]/passive_effect[@name='EntityDamage' and @operation='base_set']/@value">20</set>
+		<set xpath="//item[starts-with(@name, 'meleeToolAxeT2')]/effect_group[starts-with(@name, 'meleeToolAxeT2')]/passive_effect[@name='EntityDamage' and @operation='base_set']/@value">30</set>
+
+	<!-- add axes to deep cuts perk -->
+		<csv xpath="//item[starts-with(@name, 'meleeToolAxe')]/property[@name='Tags']/@value" delim="," op="add">perkDeepCuts</csv>
+
+	<!-- power attack speed of knives needs to be way faster -->
+		<set xpath="//item[starts-with(@name, 'meleeWpnBlade')]/effect_group[@name='Power Attack']/passive_effect[@name='AttacksPerMinute']/@value">-50</set>
+	
+	<!-- Add butcher harvest to spears -->
+		<append xpath="//item[starts-with(@name, 'meleeWpnSpear')]/effect_group[starts-with(@name, 'meleeWpnSpear')]">
+			<passive_effect name="HarvestCount" operation="base_set" value="1" tags="butcherHarvest" />
+		</append>
+	
+	<!-- reduce zombie reach by %50 -->
+		<set xpath="/items/item[@name='meleeHandMaster']/property[@class='Action0']/property[@name='Range']/@value">1.325</set>
+		<set xpath="/items/item[@name='meleeHandZombie01']/property[@class='Action0']/property[@name='Range']/@value">1.325</set>
+		<set xpath="/items/item[@name='meleeHandZombieShort']/property[@class='Action0']/property[@name='Range']/@value">1.325</set>
+		<set xpath="/items/item[@name='meleeHandZombieShortFeral']/property[@class='Action0']/property[@name='Range']/@value">1.325</set>
+		<set xpath="/items/item[@name='meleeHandZombieBurning']/property[@class='Action0']/property[@name='Range']/@value">1.325</set>
+		<set xpath="/items/item[@name='meleeHandZombieBurningFeral']/property[@class='Action0']/property[@name='Range']/@value">1.325</set>
+		<set xpath="/items/item[@name='meleeHandZombieCop']/property[@class='Action0']/property[@name='Range']/@value">1.5</set>
+		<set xpath="/items/item[@name='meleeHandzombieMutated']/property[@class='Action0']/property[@name='Range']/@value">1.5</set>
+		<set xpath="/items/item[@name='meleeHandzombieMutatedFeral']/property[@class='Action0']/property[@name='Range']/@value">1.5</set>
+		<set xpath="/items/item[@name='meleeHandzombieMutatedRadiated']/property[@class='Action0']/property[@name='Range']/@value">1.5</set>
+	
+	<!-- add 1 mod slots per level of quality on weapons, tools, and armor -->
+		<set xpath="/items/item[starts-with(@name, 'meleeTool')]/effect_group[starts-with(@name, 'meleeTool')]/passive_effect[@name='ModSlots']/@value">1,2,3,4,5,6</set>
+		<set xpath="/items/item[starts-with(@name, 'meleeWpn')]/effect_group[starts-with(@name, 'meleeWpn')]/passive_effect[@name='ModSlots']/@value">1,2,3,4,5,6</set>
+		<set xpath="/items/item[starts-with(@name, 'gunHandgun')]/effect_group[starts-with(@name, 'gunHandgun')]/passive_effect[@name='ModSlots']/@value">1,2,3,4,5,6</set>
+		<set xpath="/items/item[starts-with(@name, 'gunShotgun')]/effect_group[starts-with(@name, 'gunShotgun')]/passive_effect[@name='ModSlots']/@value">1,2,3,4,5,6</set>
+		<set xpath="/items/item[starts-with(@name, 'gunRifle')]/effect_group[starts-with(@name, 'gunRifle')]/passive_effect[@name='ModSlots']/@value">1,2,3,4,5,6</set>
+		<set xpath="/items/item[starts-with(@name, 'gunMGT')]/effect_group[starts-with(@name, 'gunMGT')]/passive_effect[@name='ModSlots']/@value">1,2,3,4,5,6</set>
+		<set xpath="/items/item[starts-with(@name, 'gunExplosives')]/effect_group[starts-with(@name, 'gunExplosives')]/passive_effect[@name='ModSlots']/@value">1,2,3,4,5,6</set>
+		<set xpath="/items/item[starts-with(@name, 'gunBow')]/effect_group[starts-with(@name, 'gunBow')]/passive_effect[@name='ModSlots']/@value">1,2,3,4,5,6</set>
+		<set xpath="/items/item[starts-with(@name, 'gunBot')]/effect_group[starts-with(@name, 'gunBot')]/passive_effect[@name='ModSlots']/@value">1,2,3,4,5,6</set>
+		<set xpath="/items/item[starts-with(@name, 'armor')]/effect_group[contains(@name, 'armor')]/passive_effect[@name='ModSlots']/@value">1,2,3,4,5,6</set>
+	
+	<!-- craftable water filter -->
+	<insertBefore xpath="/items/item[@name='modGunBarrelExtenderSchematic']">
+		<item name="resourceWaterFilterSchematic">
+			<property name="Extends" value="schematicNoQualityMaster" />
+			<property name="CreativeMode" value="Player" />
+			<property name="CustomIcon" value="resourceWaterFilter" />
+			<property name="Unlocks" value="resourceWaterFilter" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="resourceWaterFilter" operation="set" value="1" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="250" />
+			</effect_group>
+		</item>
+	</insertBefore>
+	<append xpath="/items/item[@name='resourceWaterFilter']">
+		<property name="Tags" value="foodSkill" />
+		<property name="EconomicValue" value="150"></property>
+		<property name="UnlockedBy" value="craftingFood,resourceWaterFilterSchematic" />
+	</append>
+	
+</delta12>
+
+

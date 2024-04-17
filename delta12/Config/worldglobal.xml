@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<delta12>
+
+	<!-- fix interior lighting eye adaptation, because it sucks  -->
+	<set xpath="/worldglobal/environment/property[@name='ambientInsideThreshold']/@value">1024</set>
+
+</delta12>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<delta12>
+
+  <!-- zombie loot bags stick around longer -->
+  <set xpath="/entity_classes/entity_class[@name='DroppedLootContainer']/property[@name='TimeStayAfterDeath']/@value">300</set>
+  <set xpath="/entity_classes/entity_class[starts-with(@name, 'EntityLootContainer')]/property[@name='TimeStayAfterDeath']/@value">1800</set>
+
+  <!-- more loot bags drop from zombies -->
+  <set xpath="/entity_classes/entity_class[starts-with(@name, 'zombieTemplate')]/property[@name='LootDropProb']/@value">.05</set>
+  <set xpath="/entity_classes/entity_class[contains(@name, 'Feral')]/property[@name='LootDropProb']/@value">.1</set>
+  <append xpath="/entity_classes/entity_class[contains(@name, 'Radiated')]"><property name="LootDropProb" value=".2"/></append>
+  <set xpath="/entity_classes/entity_class[@name='zombieWightFeral']/property[@name='LootDropProb']/@value">.3</set>
+  <append xpath="/entity_classes/entity_class[@name='zombieWightRadiated']"><property name="LootDropProb" value=".5"/></append>
+  
+</delta12>

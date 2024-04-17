@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<delta12>
+
+	<!-- harvesting player-planted crops has a 50% chance to yield a seed -->
+		<set xpath ="blocks/block[@name='plantedGoldenrod3HarvestPlayer']/drop[@name='plantedGoldenrod1']/@prob">0.5</set>
+		<set xpath ="blocks/block[@name='plantedMushroom3HarvestPlayer']/drop[@name='plantedMushroom1']/@prob">0.5</set>
+		<set xpath ="blocks/block[@name='plantedYucca3HarvestPlayer']/drop[@name='plantedYucca1']/@prob">0.5</set>
+		<set xpath ="blocks/block[@name='plantedCotton3HarvestPlayer']/drop[@name='plantedCotton1']/@prob">0.5</set>
+		<set xpath ="blocks/block[@name='plantedCoffee3HarvestPlayer']/drop[@name='plantedCoffee1']/@prob">0.5</set>
+		<set xpath ="blocks/block[@name='plantedAloe3HarvestPlayer']/drop[@name='plantedAloe1']/@prob">0.5</set>
+		<set xpath ="blocks/block[@name='plantedBlueberry3HarvestPlayer']/drop[@name='plantedBlueberry1']/@prob">0.5</set>
+		<set xpath ="blocks/block[@name='plantedPotato3HarvestPlayer']/drop[@name='plantedPotato1']/@prob">0.5</set>
+		<set xpath ="blocks/block[@name='plantedChrysanthemum3HarvestPlayer']/drop[@name='plantedChrysanthemum1']/@prob">0.5</set>
+		<set xpath ="blocks/block[@name='plantedCorn3HarvestPlayer']/drop[@name='plantedCorn1']/@prob">0.5</set>
+		<set xpath ="blocks/block[@name='plantedGraceCorn3HarvestPlayer']/drop[@name='plantedGraceCorn1']/@prob">0.5</set>
+		<set xpath ="blocks/block[@name='plantedHop3HarvestPlayer']/drop[@name='plantedHop1']/@prob">1</set>
+		<set xpath ="blocks/block[@name='plantedPumpkin3HarvestPlayer']/drop[@name='plantedPumpkin1']/@prob">0.5</set>
+	
+	<!-- harvesting player-planted crops reverts back to seedling, no replanting required -->
+		<insertAfter xpath="/blocks/block[@name='plantedMushroom3HarvestPlayer']/property[@name='DescriptionKey']">
+			<property name="DowngradeBlock" value="plantedMushroom1"/>
+		</insertAfter>
+
+		<insertAfter xpath="/blocks/block[@name='plantedYucca3HarvestPlayer']/property[@name='DescriptionKey']">
+			<property name="DowngradeBlock" value="plantedYucca1"/>
+		</insertAfter>
+
+		<insertAfter xpath="/blocks/block[@name='plantedCotton3HarvestPlayer']/property[@name='DescriptionKey']">
+			<property name="DowngradeBlock" value="plantedCotton1"/>
+		</insertAfter>
+
+		<insertAfter xpath="/blocks/block[@name='plantedCoffee3HarvestPlayer']/property[@name='DescriptionKey']">
+			<property name="DowngradeBlock" value="plantedCoffee1"/>
+		</insertAfter>
+
+		<insertAfter xpath="/blocks/block[@name='plantedGoldenrod3HarvestPlayer']/property[@name='DescriptionKey']">
+			<property name="DowngradeBlock" value="plantedGoldenrod1"/>
+		</insertAfter>
+
+		<insertAfter xpath="/blocks/block[@name='plantedAloe3HarvestPlayer']/property[@name='DescriptionKey']">
+			<property name="DowngradeBlock" value="plantedAloe1"/>
+		</insertAfter>
+
+		<insertAfter xpath="/blocks/block[@name='plantedBlueberry3HarvestPlayer']/property[@name='DescriptionKey']">
+			<property name="DowngradeBlock" value="plantedBlueberry1"/>
+		</insertAfter>
+
+		<insertAfter xpath="/blocks/block[@name='plantedPotato3HarvestPlayer']/property[@name='DescriptionKey']">
+			<property name="DowngradeBlock" value="plantedPotato1"/>
+		</insertAfter>
+
+		<insertAfter xpath="/blocks/block[@name='plantedChrysanthemum3HarvestPlayer']/property[@name='DescriptionKey']">
+			<property name="DowngradeBlock" value="plantedChrysanthemum1"/>
+		</insertAfter>
+
+		<insertAfter xpath="/blocks/block[@name='plantedCorn3HarvestPlayer']/property[@name='DescriptionKey']">
+			<property name="DowngradeBlock" value="plantedCorn1"/>
+		</insertAfter>
+
+		<insertAfter xpath="/blocks/block[@name='plantedGraceCorn3HarvestPlayer']/property[@name='DescriptionKey']">
+			<property name="DowngradeBlock" value="plantedGraceCorn1"/>
+		</insertAfter>
+
+		<insertAfter xpath="/blocks/block[@name='plantedHop3HarvestPlayer']/property[@name='DescriptionKey']">
+			<property name="DowngradeBlock" value="plantedHop1"/>
+		</insertAfter>
+
+		<insertAfter xpath="/blocks/block[@name='plantedPumpkin3HarvestPlayer']/property[@name='DescriptionKey']">
+			<property name="DowngradeBlock" value="plantedPumpkin1"/>
+		</insertAfter>
+	
+	<!-- hack to subdue the sound of harvesting bird nests, because it is awful -->
+		<append xpath="/blocks/block[@name='cntBirdnest']">
+			<property name="Material" value="Mcorn"/>
+			<property name="MaxDamage" value="100"/>
+		</append>
+	
+	<!-- reduce heatmap of blocks to reasonable levels -->
+		<!-- HeatMapStrength: The Percentage of heat an event will contribute (when made from this block). -->
+		<!-- HeatMapTime: The time, or Number of 'ticks', until an event expires. -->
+		<!-- HeatMapFrequency: The time,or Number of 'ticks', between heat event creations. -->
+			<!-- cntDewCollector: defaults: (2, 5000, 1000) -->
+				<set xpath="/blocks/block[@name='cntDewCollector']/property[@name='HeatMapStrength']/@value">0</set>
+				<set xpath="/blocks/block[@name='cntDewCollector']/property[@name='HeatMapTime']/@value">2500</set>
+				<set xpath="/blocks/block[@name='cntDewCollector']/property[@name='HeatMapFrequency']/@value">500</set>
+			<!-- campfire: defaults (5, 5000, 1000) -->
+				<set xpath="/blocks/block[@name='campfire']/property[@name='HeatMapStrength']/@value">2.5</set>
+				<set xpath="/blocks/block[@name='campfire']/property[@name='HeatMapTime']/@value">2500</set>
+				<set xpath="/blocks/block[@name='campfire']/property[@name='HeatMapFrequency']/@value">500</set>
+			<!-- forge: defaults (6, 5000, 1000) -->
+				<set xpath="/blocks/block[@name='forge']/property[@name='HeatMapStrength']/@value">3</set>
+				<set xpath="/blocks/block[@name='forge']/property[@name='HeatMapTime']/@value">2500</set>
+				<set xpath="/blocks/block[@name='forge']/property[@name='HeatMapFrequency']/@value">500</set>
+			<!-- workbench: defaults (2, 5000, 1000) -->
+				<set xpath="/blocks/block[@name='workbench']/property[@name='HeatMapStrength']/@value">1</set>
+				<set xpath="/blocks/block[@name='workbench']/property[@name='HeatMapTime']/@value">2500</set>
+				<set xpath="/blocks/block[@name='workbench']/property[@name='HeatMapFrequency']/@value">500</set>
+			<!-- cementMixer: defaults (2, 5000, 1000) -->
+				<set xpath="/blocks/block[@name='cementMixer']/property[@name='HeatMapStrength']/@value">1</set>
+				<set xpath="/blocks/block[@name='cementMixer']/property[@name='HeatMapTime']/@value">2500</set>
+				<set xpath="/blocks/block[@name='cementMixer']/property[@name='HeatMapFrequency']/@value">500</set>
+			<!-- chemistryStation: defaults(5, 5000, 1000)-->
+				<set xpath="/blocks/block[@name='chemistryStation']/property[@name='HeatMapStrength']/@value">2.5</set>
+				<set xpath="/blocks/block[@name='chemistryStation']/property[@name='HeatMapTime']/@value">2500</set>
+				<set xpath="/blocks/block[@name='chemistryStation']/property[@name='HeatMapFrequency']/@value">500</set>
+			<!-- wallTorchLightPlayer: defaults (1, 4000) -->
+				<set xpath="/blocks/block[@name='wallTorchLightPlayer']/property[@name='HeatMapStrength']/@value">.1</set>
+				<set xpath="/blocks/block[@name='wallTorchLightPlayer']/property[@name='HeatMapTime']/@value">500</set>
+				<!-- HeatMapFrequency is not used. 1 min realtime updates that scale to match world time rate -->
+			<!-- candleWallLightPlayer: defaults (1, 4000) -->
+				<set xpath="/blocks/block[@name='candleWallLightPlayer']/property[@name='HeatMapStrength']/@value">.05</set>
+				<set xpath="/blocks/block[@name='candleWallLightPlayer']/property[@name='HeatMapTime']/@value">500</set>
+				<!-- HeatMapFrequency is not used. 1 min realtime updates that scale to match world time rate -->
+			<!-- burningBarrelPlayer: defaults (1, 4000) -->
+				<set xpath="/blocks/block[@name='burningBarrelPlayer']/property[@name='HeatMapStrength']/@value">.5</set>
+				<set xpath="/blocks/block[@name='burningBarrelPlayer']/property[@name='HeatMapTime']/@value">500</set>
+				<!-- HeatMapFrequency is not used. 1 min realtime updates that scale to match world time rate -->
+
+	<!-- can pickup wood spikes, iron spikes, and barbed wire -->
+		<append xpath="/blocks/block[@name='trapSpikesWoodDmg0']">
+			<property name="CanPickup" value="true" param1="trapSpikesWoodDmg0" />
+		</append>
+		<append xpath="/blocks/block[@name='trapSpikesIronDmg0']">
+			<property name="CanPickup" value="true" param1="trapSpikesIronDmg0" />
+		</append>
+		<append xpath="/blocks/block[@name='barbedFence']">
+			<property name="CanPickup" value="true" />
+		</append>
+	
+	<!-- significantly reduce block pickup time for any block that has a timer (such as workstations) -->
+		<set xpath="//property[@name= 'TakeDelay' and @value>0]/@value">1</set>
+
+	<!-- increase chance of honey from trees, with and without having the perk magazine -->
+	<append xpath="/blocks/block[@name='treeMaster']">
+		<drop event="Destroy" name="foodHoney" prob=".1" count="1"/>
+		<drop event="Destroy" name="foodHoney" prob=".2" count="1" tag="WasteTreasuresHoneyHarvest"/>
+	</append>
+
+</delta12>
